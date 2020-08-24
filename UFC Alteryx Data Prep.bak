@@ -1,0 +1,1423 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.2">
+  <Nodes>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>ufc_wiki_event_data.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="#" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Event" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Date" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Venue" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Location" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Attendance" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Ref." size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_wiki_event_data.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="102" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="#" selected="True" rename="event_id" />
+            <SelectField field="Event" selected="True" rename="event" />
+            <SelectField field="Date" selected="True" rename="date" />
+            <SelectField field="Venue" selected="True" rename="venue" />
+            <SelectField field="Location" selected="True" rename="location" />
+            <SelectField field="Attendance" selected="True" rename="attendance" />
+            <SelectField field="Ref." selected="False" rename="reference_id" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="186" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToString(DateTimeYear([date]))+'_'+ToString(DateTimeMonth([date]))+'_'+ToString(DateTimeDay([date]))" field="date_id" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>date_id = ToString(DateTimeYear([date]))+'_'+ToString(DateTimeMonth([date]))+'_'...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>2</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>datasets-2266-13813-ufc_ppv_buys.xlsx
+Query=`Sheet 1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Year" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="Double" />
+            <Field name="Month" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="Double" />
+            <Field name="Day" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="Double" />
+            <Field name="UFC_Number" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="Double" />
+            <Field name="Opponent1" size="255" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="V_String" />
+            <Field name="Opponent2" size="255" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="V_String" />
+            <Field name="PPV" source="File: \\Mac\Home\Desktop\UFC\datasets-2266-13813-ufc_ppv_buys.xlsx|||`Sheet 1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="282" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_f713a854a46e4dbe9e43ce56fd4915ee_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="174" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Year]+'_'+[Month]+'_'+[Day]" field="date_id" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <AnnotationText><![CDATA[date_id = [Year]+'_'+[Month]+'_'+[Day]
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[date_id = [Year]+'_'+[Month]+'_'+[Day]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="102" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Year" selected="True" rename="year" type="V_WString" size="19" />
+            <SelectField field="Month" selected="True" rename="month" type="V_WString" size="19" />
+            <SelectField field="Day" selected="True" rename="day" type="V_WString" size="19" />
+            <SelectField field="UFC_Number" selected="True" rename="ufc_ppv_number" />
+            <SelectField field="Opponent1" selected="True" rename="headliner_name_1" />
+            <SelectField field="Opponent2" selected="True" rename="headliner_name_2" />
+            <SelectField field="PPV" selected="True" rename="ppv_buys" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="378" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>date_id</FieldFind>
+          <FieldSearch>date_id</FieldSearch>
+          <ReplaceFoundField>month</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="ufc_ppv_number" />
+            <Field field="headliner_name_1" />
+            <Field field="headliner_name_2" />
+            <Field field="ppv_buys" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="450" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>location</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>location</RootName>
+          <Delimeters value="," />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="594" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="event_id" selected="True" />
+            <SelectField field="event" selected="True" />
+            <SelectField field="date" selected="True" />
+            <SelectField field="venue" selected="True" />
+            <SelectField field="location" selected="True" />
+            <SelectField field="attendance" selected="True" />
+            <SelectField field="date_id" selected="True" />
+            <SelectField field="ufc_ppv_number" selected="True" />
+            <SelectField field="headliner_name_1" selected="True" />
+            <SelectField field="headliner_name_2" selected="True" />
+            <SelectField field="ppv_buys" selected="True" />
+            <SelectField field="location1" selected="True" rename="location_city" />
+            <SelectField field="location2" selected="True" rename="location_state" />
+            <SelectField field="location3" selected="True" rename="location_country" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings>
+        <Position x="522" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"location1","location2","location3"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="726" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [location_country]=''&#xA;THEN [location_city]+&quot;_&quot;+[location_state] &#xA;ELSE [location_city]+&quot;_&quot;+[location_country]&#xA;ENDIF&#xA;" field="location_join" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF IsNull([location_country]) THEN [location_state] ELSE [location_country] ENDIF" field="location_country" size="255" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>location_join = IF [location_country]=''
+THEN [location_city]+"_"+[location_stat...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="798" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>location_join</FieldFind>
+          <FieldSearch>location_join</FieldSearch>
+          <ReplaceFoundField>id</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="lat" />
+            <Field field="lng" />
+            <Field field="country" />
+            <Field field="population" />
+            <Field field="id" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="870" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id" selected="True" rename="location_id" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="942" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_828bdf05ea1e42d2b4c8507d7fa85a0b_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="654" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([location_country],'U.S.', 'United States')" field="location_country" size="255" type="V_WString" />
+            <FormulaField expression="Replace([location_country],'U.K.', 'United Kingdom')" field="location_country" size="255" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>location_country = Replace([location_country],'U.S.', 'United States')
+location_...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>worldcities.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="city" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="city_ascii" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="lat" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="lng" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="country" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="iso2" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="iso3" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="admin_name" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="capital" size="255" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="population" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="id" source="File: \\Mac\Home\Desktop\UFC\worldcities.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="174" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[city]+'_'+[country]" field="location_join" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <AnnotationText><![CDATA[location_join = [city]+'_'+[country]
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[location_join = [city]+'_'+[country]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="102" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([country],'Korea, South', 'South Korea')" field="country" size="255" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <AnnotationText><![CDATA[country = Replace([country],'Korea, South', 'South Korea')
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[country = Replace([country],'Korea, South', 'South Korea')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="78" width="276" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1. Start with event data sourced from wikipedia</Text>
+          <Font name="Calibri" size="9" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="174" width="276" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>2. Join Pay-per-view data from separate data source on unique event date.</Text>
+          <Font name="Calibri" size="9" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="294" width="240" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>3. Join location data to bring in lat / long dat</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="270" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_cdcd3c8117ad444ca145225a17c95d43_.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="150" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_751752f75720441481d1b9a6c4b249e1_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ufc_data_1.xlsx
+Query=`ufc_data_1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="R_fighter" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="B_fighter" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="Referee" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="location" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="Winner" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="title_bout" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Bool" />
+            <Field name="weight_class" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="date" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Date" />
+            <Field name="no_of_rounds" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_current_lose_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_current_win_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_draw" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_BODY_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_BODY_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_CLINCH_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_CLINCH_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_DISTANCE_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_DISTANCE_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_GROUND_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_GROUND_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_HEAD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_HEAD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_KD" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_LEG_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_LEG_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_PASS" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_REV" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_SIG_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_SIG_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_SIG_STR_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_SUB_ATT" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_TD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_TD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_TD_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_TOTAL_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_TOTAL_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_longest_win_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_losses" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_BODY_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_BODY_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_CLINCH_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_CLINCH_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_DISTANCE_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_DISTANCE_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_GROUND_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_GROUND_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_HEAD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_HEAD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_KD" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_LEG_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_LEG_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_PASS" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_REV" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_SIG_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_SIG_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_SIG_STR_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_SUB_ATT" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_TD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_TD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_TD_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_TOTAL_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_avg_opp_TOTAL_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_total_rounds_fought" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_total_time_fought(seconds)" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_total_title_bouts" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_Decision_Majority" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_Decision_Split" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_Decision_Unanimous" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_KO/TKO" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_Submission" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_win_by_TKO_Doctor_Stoppage" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_wins" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_Stance" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="B_Height_cms" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_Reach_cms" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_Weight_lbs" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_current_lose_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_current_win_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_draw" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_BODY_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_BODY_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_CLINCH_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_CLINCH_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_DISTANCE_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_DISTANCE_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_GROUND_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_GROUND_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_HEAD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_HEAD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_KD" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_LEG_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_LEG_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_PASS" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_REV" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_SIG_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_SIG_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_SIG_STR_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_SUB_ATT" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_TD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_TD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_TD_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_TOTAL_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_TOTAL_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_longest_win_streak" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_losses" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_BODY_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_BODY_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_CLINCH_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_CLINCH_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_DISTANCE_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_DISTANCE_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_GROUND_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_GROUND_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_HEAD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_HEAD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_KD" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_LEG_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_LEG_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_PASS" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_REV" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_SIG_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_SIG_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_SIG_STR_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_SUB_ATT" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_TD_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_TD_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_TD_pct" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_TOTAL_STR_att" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_avg_opp_TOTAL_STR_landed" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_total_rounds_fought" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_total_time_fought(seconds)" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_total_title_bouts" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_Decision_Majority" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_Decision_Split" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_Decision_Unanimous" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_KO/TKO" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_Submission" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_win_by_TKO_Doctor_Stoppage" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_wins" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_Stance" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+            <Field name="R_Height_cms" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_Reach_cms" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_Weight_lbs" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="B_age" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="R_age" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="Double" />
+            <Field name="date_retired" size="255" source="File: \\Mac\Home\Desktop\UFC\ufc_data_1.xlsx|||`ufc_data_1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="462" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="date_id" action="GroupBy" rename="date_id" />
+            <SummarizeField field="event_id" action="GroupBy" rename="event_id" />
+            <SummarizeField field="date" action="GroupBy" rename="date" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="618" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_c87f0c527bb24d3090552e733ffcfe60_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="474" y="222" width="180" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>4. Create Event bridge table based on string event date</Text>
+          <Font name="Calibri" size="9" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="126" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="date_retired" selected="True" rename="date" type="V_WString" size="255" />
+            <SelectField field="R_fighter" selected="True" />
+            <SelectField field="B_fighter" selected="True" />
+            <SelectField field="Referee" selected="True" />
+            <SelectField field="location" selected="True" />
+            <SelectField field="Winner" selected="True" />
+            <SelectField field="title_bout" selected="True" />
+            <SelectField field="weight_class" selected="True" />
+            <SelectField field="no_of_rounds" selected="True" />
+            <SelectField field="B_current_lose_streak" selected="True" />
+            <SelectField field="B_current_win_streak" selected="True" />
+            <SelectField field="B_draw" selected="True" />
+            <SelectField field="B_avg_BODY_att" selected="False" />
+            <SelectField field="B_avg_BODY_landed" selected="False" />
+            <SelectField field="B_avg_CLINCH_att" selected="False" />
+            <SelectField field="B_avg_CLINCH_landed" selected="False" />
+            <SelectField field="B_avg_DISTANCE_att" selected="False" />
+            <SelectField field="B_avg_DISTANCE_landed" selected="False" />
+            <SelectField field="B_avg_GROUND_att" selected="False" />
+            <SelectField field="B_avg_GROUND_landed" selected="True" />
+            <SelectField field="B_avg_HEAD_att" selected="False" />
+            <SelectField field="B_avg_HEAD_landed" selected="False" />
+            <SelectField field="B_avg_KD" selected="False" />
+            <SelectField field="B_avg_LEG_att" selected="False" />
+            <SelectField field="B_avg_LEG_landed" selected="True" />
+            <SelectField field="B_avg_PASS" selected="False" />
+            <SelectField field="B_avg_REV" selected="False" />
+            <SelectField field="B_avg_SIG_STR_att" selected="False" />
+            <SelectField field="B_avg_SIG_STR_landed" selected="False" />
+            <SelectField field="B_avg_SIG_STR_pct" selected="False" />
+            <SelectField field="B_avg_SUB_ATT" selected="False" />
+            <SelectField field="B_avg_TD_att" selected="False" />
+            <SelectField field="B_avg_TD_landed" selected="False" />
+            <SelectField field="B_avg_TD_pct" selected="False" />
+            <SelectField field="B_avg_TOTAL_STR_att" selected="False" />
+            <SelectField field="B_avg_TOTAL_STR_landed" selected="False" />
+            <SelectField field="B_longest_win_streak" selected="False" />
+            <SelectField field="B_losses" selected="False" />
+            <SelectField field="B_avg_opp_BODY_att" selected="False" />
+            <SelectField field="B_avg_opp_BODY_landed" selected="False" />
+            <SelectField field="B_avg_opp_CLINCH_att" selected="False" />
+            <SelectField field="B_avg_opp_CLINCH_landed" selected="False" />
+            <SelectField field="B_avg_opp_DISTANCE_att" selected="False" />
+            <SelectField field="B_avg_opp_DISTANCE_landed" selected="False" />
+            <SelectField field="B_avg_opp_GROUND_att" selected="False" />
+            <SelectField field="B_avg_opp_GROUND_landed" selected="False" />
+            <SelectField field="B_avg_opp_HEAD_att" selected="False" />
+            <SelectField field="B_avg_opp_HEAD_landed" selected="False" />
+            <SelectField field="B_avg_opp_KD" selected="False" />
+            <SelectField field="B_avg_opp_LEG_att" selected="False" />
+            <SelectField field="B_avg_opp_LEG_landed" selected="False" />
+            <SelectField field="B_avg_opp_PASS" selected="False" />
+            <SelectField field="B_avg_opp_REV" selected="False" />
+            <SelectField field="B_avg_opp_SIG_STR_att" selected="False" />
+            <SelectField field="B_avg_opp_SIG_STR_landed" selected="False" />
+            <SelectField field="B_avg_opp_SIG_STR_pct" selected="False" />
+            <SelectField field="B_avg_opp_SUB_ATT" selected="False" />
+            <SelectField field="B_avg_opp_TD_att" selected="False" />
+            <SelectField field="B_avg_opp_TD_landed" selected="False" />
+            <SelectField field="B_avg_opp_TD_pct" selected="False" />
+            <SelectField field="B_avg_opp_TOTAL_STR_att" selected="False" />
+            <SelectField field="B_avg_opp_TOTAL_STR_landed" selected="False" />
+            <SelectField field="B_total_rounds_fought" selected="True" />
+            <SelectField field="B_total_time_fought(seconds)" selected="True" />
+            <SelectField field="B_total_title_bouts" selected="True" />
+            <SelectField field="B_win_by_Decision_Majority" selected="True" />
+            <SelectField field="B_win_by_Decision_Split" selected="True" />
+            <SelectField field="B_win_by_Decision_Unanimous" selected="True" />
+            <SelectField field="B_win_by_KO/TKO" selected="True" />
+            <SelectField field="B_win_by_Submission" selected="True" />
+            <SelectField field="B_win_by_TKO_Doctor_Stoppage" selected="True" />
+            <SelectField field="B_wins" selected="True" />
+            <SelectField field="B_Stance" selected="True" />
+            <SelectField field="B_Height_cms" selected="True" />
+            <SelectField field="B_Reach_cms" selected="True" />
+            <SelectField field="B_Weight_lbs" selected="True" />
+            <SelectField field="R_current_lose_streak" selected="True" />
+            <SelectField field="R_current_win_streak" selected="True" />
+            <SelectField field="R_draw" selected="True" />
+            <SelectField field="R_avg_BODY_att" selected="False" />
+            <SelectField field="R_avg_BODY_landed" selected="False" />
+            <SelectField field="R_avg_CLINCH_att" selected="False" />
+            <SelectField field="R_avg_CLINCH_landed" selected="False" />
+            <SelectField field="R_avg_DISTANCE_att" selected="False" />
+            <SelectField field="R_avg_DISTANCE_landed" selected="False" />
+            <SelectField field="R_avg_GROUND_att" selected="False" />
+            <SelectField field="R_avg_GROUND_landed" selected="False" />
+            <SelectField field="R_avg_HEAD_att" selected="False" />
+            <SelectField field="R_avg_HEAD_landed" selected="False" />
+            <SelectField field="R_avg_KD" selected="False" />
+            <SelectField field="R_avg_LEG_att" selected="False" />
+            <SelectField field="R_avg_LEG_landed" selected="False" />
+            <SelectField field="R_avg_PASS" selected="False" />
+            <SelectField field="R_avg_REV" selected="False" />
+            <SelectField field="R_avg_SIG_STR_att" selected="False" />
+            <SelectField field="R_avg_SIG_STR_landed" selected="False" />
+            <SelectField field="R_avg_SIG_STR_pct" selected="False" />
+            <SelectField field="R_avg_SUB_ATT" selected="False" />
+            <SelectField field="R_avg_TD_att" selected="False" />
+            <SelectField field="R_avg_TD_landed" selected="False" />
+            <SelectField field="R_avg_TD_pct" selected="False" />
+            <SelectField field="R_avg_TOTAL_STR_att" selected="True" />
+            <SelectField field="R_avg_TOTAL_STR_landed" selected="True" />
+            <SelectField field="R_longest_win_streak" selected="True" />
+            <SelectField field="R_losses" selected="True" />
+            <SelectField field="R_avg_opp_BODY_att" selected="False" />
+            <SelectField field="R_avg_opp_BODY_landed" selected="False" />
+            <SelectField field="R_avg_opp_CLINCH_att" selected="False" />
+            <SelectField field="R_avg_opp_CLINCH_landed" selected="False" />
+            <SelectField field="R_avg_opp_DISTANCE_att" selected="False" />
+            <SelectField field="R_avg_opp_DISTANCE_landed" selected="False" />
+            <SelectField field="R_avg_opp_GROUND_att" selected="False" />
+            <SelectField field="R_avg_opp_GROUND_landed" selected="False" />
+            <SelectField field="R_avg_opp_HEAD_att" selected="False" />
+            <SelectField field="R_avg_opp_HEAD_landed" selected="False" />
+            <SelectField field="R_avg_opp_KD" selected="False" />
+            <SelectField field="R_avg_opp_LEG_att" selected="False" />
+            <SelectField field="R_avg_opp_LEG_landed" selected="False" />
+            <SelectField field="R_avg_opp_PASS" selected="False" />
+            <SelectField field="R_avg_opp_REV" selected="False" />
+            <SelectField field="R_avg_opp_SIG_STR_att" selected="False" />
+            <SelectField field="R_avg_opp_SIG_STR_landed" selected="False" />
+            <SelectField field="R_avg_opp_SIG_STR_pct" selected="False" />
+            <SelectField field="R_avg_opp_SUB_ATT" selected="False" />
+            <SelectField field="R_avg_opp_TD_att" selected="False" />
+            <SelectField field="R_avg_opp_TD_landed" selected="False" />
+            <SelectField field="R_avg_opp_TD_pct" selected="False" />
+            <SelectField field="R_avg_opp_TOTAL_STR_att" selected="True" />
+            <SelectField field="R_avg_opp_TOTAL_STR_landed" selected="True" />
+            <SelectField field="R_total_rounds_fought" selected="True" />
+            <SelectField field="R_total_time_fought(seconds)" selected="True" />
+            <SelectField field="R_total_title_bouts" selected="True" />
+            <SelectField field="R_win_by_Decision_Majority" selected="True" />
+            <SelectField field="R_win_by_Decision_Split" selected="True" />
+            <SelectField field="R_win_by_Decision_Unanimous" selected="True" />
+            <SelectField field="R_win_by_KO/TKO" selected="True" />
+            <SelectField field="R_win_by_Submission" selected="True" />
+            <SelectField field="R_win_by_TKO_Doctor_Stoppage" selected="True" />
+            <SelectField field="R_wins" selected="True" />
+            <SelectField field="R_Stance" selected="True" />
+            <SelectField field="R_Height_cms" selected="True" />
+            <SelectField field="R_Reach_cms" selected="True" />
+            <SelectField field="R_Weight_lbs" selected="True" />
+            <SelectField field="B_age" selected="True" />
+            <SelectField field="R_age" selected="True" />
+            <SelectField field="date" selected="True" rename="date (don't use)" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="294" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToString(DateTimeYear([DateTime_Out]))+'_'+ToString(DateTimeMonth([DateTime_Out]))+'_'+ToString(DateTimeDay([DateTime_Out]))" field="date_id" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>date_id = ToString(DateTimeYear([DateTime_Out]))+'_'+ToString(DateTimeMonth([Dat...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="402" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="date_id" selected="True" />
+            <SelectField field="DateTime_Out" selected="True" rename="date" />
+            <SelectField field="date_retired" selected="False" />
+            <SelectField field="date" selected="False" />
+            <SelectField field="R_fighter" selected="True" />
+            <SelectField field="B_fighter" selected="True" />
+            <SelectField field="Referee" selected="True" />
+            <SelectField field="location" selected="True" />
+            <SelectField field="Winner" selected="True" />
+            <SelectField field="title_bout" selected="True" />
+            <SelectField field="weight_class" selected="True" />
+            <SelectField field="no_of_rounds" selected="True" />
+            <SelectField field="B_current_lose_streak" selected="True" />
+            <SelectField field="B_current_win_streak" selected="True" />
+            <SelectField field="B_draw" selected="True" />
+            <SelectField field="B_avg_GROUND_landed" selected="True" />
+            <SelectField field="B_avg_LEG_landed" selected="True" />
+            <SelectField field="B_total_rounds_fought" selected="True" />
+            <SelectField field="B_total_time_fought(seconds)" selected="True" />
+            <SelectField field="B_total_title_bouts" selected="True" />
+            <SelectField field="B_win_by_Decision_Majority" selected="True" />
+            <SelectField field="B_win_by_Decision_Split" selected="True" />
+            <SelectField field="B_win_by_Decision_Unanimous" selected="True" />
+            <SelectField field="B_win_by_KO/TKO" selected="True" />
+            <SelectField field="B_win_by_Submission" selected="True" />
+            <SelectField field="B_win_by_TKO_Doctor_Stoppage" selected="True" />
+            <SelectField field="B_wins" selected="True" />
+            <SelectField field="B_Stance" selected="True" />
+            <SelectField field="B_Height_cms" selected="True" />
+            <SelectField field="B_Reach_cms" selected="True" />
+            <SelectField field="B_Weight_lbs" selected="True" />
+            <SelectField field="R_current_lose_streak" selected="True" />
+            <SelectField field="R_current_win_streak" selected="True" />
+            <SelectField field="R_draw" selected="True" />
+            <SelectField field="R_avg_TOTAL_STR_att" selected="True" />
+            <SelectField field="R_avg_TOTAL_STR_landed" selected="True" />
+            <SelectField field="R_longest_win_streak" selected="True" />
+            <SelectField field="R_losses" selected="True" />
+            <SelectField field="R_avg_opp_TOTAL_STR_att" selected="True" />
+            <SelectField field="R_avg_opp_TOTAL_STR_landed" selected="True" />
+            <SelectField field="R_total_rounds_fought" selected="True" />
+            <SelectField field="R_total_time_fought(seconds)" selected="True" />
+            <SelectField field="R_total_title_bouts" selected="True" />
+            <SelectField field="R_win_by_Decision_Majority" selected="True" />
+            <SelectField field="R_win_by_Decision_Split" selected="True" />
+            <SelectField field="R_win_by_Decision_Unanimous" selected="True" />
+            <SelectField field="R_win_by_KO/TKO" selected="True" />
+            <SelectField field="R_win_by_Submission" selected="True" />
+            <SelectField field="R_win_by_TKO_Doctor_Stoppage" selected="True" />
+            <SelectField field="R_wins" selected="True" />
+            <SelectField field="R_Stance" selected="True" />
+            <SelectField field="R_Height_cms" selected="True" />
+            <SelectField field="R_Reach_cms" selected="True" />
+            <SelectField field="R_Weight_lbs" selected="True" />
+            <SelectField field="B_age" selected="True" />
+            <SelectField field="R_age" selected="True" />
+            <SelectField field="date (don't use)" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="474" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_d722ee5e3e2e4b1c9411a58f4f863c32_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="414" width="384" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[5. Prep event detail data as fact table and add event id.  We will not join to the main event table at this time to allow more flexibility in Tableau. ]]></Text>
+          <Font name="Calibri" size="9" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="546" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>date_id</FieldFind>
+          <FieldSearch>date_id</FieldSearch>
+          <ReplaceFoundField>event_id</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="event_id" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="666" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\JACOBB~1\AppData\Local\Temp\Engine_1440_25694bb753dc42cf8c5a2ae40582b7f3_\Engine_9052_1410634e2cca4c33b9af131aefde3d15_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="210" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>date</InputFieldName>
+          <Language>English</Language>
+          <Format>yyyy-MM-dd</Format>
+          <OutputFieldName>DateTime_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert date From:
+yyyy-MM-dd</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="14" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="28" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output26" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="32" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="32" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="59" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="59" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>UFC Alteryx Data Prep</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
